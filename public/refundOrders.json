@@ -1,0 +1,68 @@
+[
+    {
+        "id": "RFD12345",
+        "reason": "Defective item",
+        "store_name": "Tech Haven",
+        "store_logo": "https://example.com/logos/tech-haven.png",
+        "store_url": "https://techhaven.com",
+        "amount": 250.75,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Wireless Mouse",
+                "id": "ITM001",
+                "price": 50.25,
+                "quantity": 1
+            },
+            {
+                "name": "Mechanical Keyboard",
+                "id": "ITM002",
+                "price": 200.50,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD67890",
+        "reason": "Wrong item shipped",
+        "store_name": "Gadget World",
+        "store_logo": "https://example.com/logos/gadget-world.png",
+        "store_url": "https://gadgetworld.com",
+        "amount": 99.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Bluetooth Speaker",
+                "id": "ITM003",
+                "price": 99.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD24680",
+        "reason": "Item not as described",
+        "store_name": "Fashion Hub",
+        "store_logo": "https://example.com/logos/fashion-hub.png",
+        "store_url": "https://fashionhub.com",
+        "amount": 75.50,
+        "active": false,
+        "decision": null,
+        "items": [
+            {
+                "name": "Leather Wallet",
+                "id": "ITM004",
+                "price": 35.50,
+                "quantity": 1
+            },
+            {
+                "name": "Sunglasses",
+                "id": "ITM005",
+                "price": 40.00,
+                "quantity": 1
+            }
+        ]
+    }
+]
