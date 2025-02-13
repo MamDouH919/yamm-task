@@ -1,20 +1,32 @@
 import { createBrowserRouter, Outlet } from "react-router";
 
+import DashboardLayout from "../Layouts/Dashboard/DashboardLayout";
+import ThemeProviderMUI from "../Components/MuiThem";
+import Home from "../Pages/Home";
+import NotFound from "../Components/NotFound";
+import RefundOrdersList from "../Pages/RefundOrders/List";
+
 export const router = createBrowserRouter([
     {
         path: '/',
-        errorElement: <div>Not Found</div>,
-        element: <div>
-            <Outlet />
-        </div>,
+        element: <ThemeProviderMUI>
+            <DashboardLayout>
+                <Outlet />
+            </DashboardLayout>
+        </ThemeProviderMUI>,
         children: [
             {
-                path: '/',
-                element: <Outlet />,
-                children: [
-                    { path: '/', element: <div>ok</div> },
-                ]
-            }
+                index: true,
+                element: <Home />,
+            },
+            {
+                path: '/refund-orders',
+                element: <RefundOrdersList />,
+            },
+            {
+                path: '*',
+                element: <NotFound />,
+            },
         ],
     },
 
