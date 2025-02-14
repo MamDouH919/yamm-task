@@ -1,8 +1,33 @@
-# React + Vite
+# Order Management Table - React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is a React-based order management system using Vite. It displays orders in a table format, allowing users to:
 
-Currently, two official plugins are available:
+- View order details including **ID, reason, store, amount, active status, decision, and item count**.
+- Change the **order decision** using a dropdown (**Reject, Accept, Escalate**).
+- Toggle the **order status** between active/inactive.
+- Navigate to an **order details page** by clicking an icon button.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/order-management.git
+   cd order-management
+   ```
+
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+## Technologies Used
+- **React** (with Hooks for state management)
+- **Vite** (for fast development)
+- **Material-UI (MUI)** (for styling and components)
+- **React Router** (for navigation)
+
