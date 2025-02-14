@@ -11,8 +11,8 @@ This project is a React-based order management system using Vite. It displays or
 ## Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/order-management.git
-   cd order-management
+   git clone https://github.com/MamDouH919/yamm-task.git
+   cd yamm-task
    ```
 
 2. Install dependencies:
