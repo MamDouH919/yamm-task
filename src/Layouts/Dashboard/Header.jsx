@@ -25,18 +25,19 @@ const Header = () => {
     return (
         <AppBar position='fixed' open={context?.state.open} >
             <Toolbar>
-                <IconButton
-                    color="primary"
-                    aria-label="open drawer"
-                    onClick={() => context?.dispatch({ type: "SET_OPEN", payload: !context?.state.open })}
-                    edge="start"
-                >
-                    <Menu />
-                </IconButton>
-                <Stack mx={2}>
+                <Stack direction={"row"} spacing={1} alignItems={"center"}>
+                    <IconButton
+                        color="primary"
+                        aria-label="open drawer"
+                        onClick={() => context?.dispatch({ type: "SET_OPEN", payload: !context?.state.open })}
+                        edge="start"
+                    >
+                        <Menu />
+                    </IconButton>
                     <Typography variant={"h1"} fontSize={20} color='primary' fontWeight={"bold"}>
                         Yamm Task
                     </Typography>
+
                 </Stack>
             </Toolbar>
         </AppBar>

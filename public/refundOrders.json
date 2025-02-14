@@ -1,6 +1,6 @@
 [
     {
-        "id": "RFD12345",
+        "id": "RFD10001",
         "reason": "Defective item",
         "store_name": "Tech Haven",
         "store_logo": "https://example.com/logos/tech-haven.png",
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "id": "RFD67890",
+        "id": "RFD10002",
         "reason": "Wrong item shipped",
         "store_name": "Gadget World",
         "store_logo": "https://example.com/logos/gadget-world.png",
@@ -42,7 +42,7 @@
         ]
     },
     {
-        "id": "RFD24680",
+        "id": "RFD10003",
         "reason": "Item not as described",
         "store_name": "Fashion Hub",
         "store_logo": "https://example.com/logos/fashion-hub.png",
@@ -62,6 +62,516 @@
                 "id": "ITM005",
                 "price": 40.00,
                 "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10004",
+        "reason": "Item arrived late",
+        "store_name": "Home Essentials",
+        "store_logo": "https://example.com/logos/home-essentials.png",
+        "store_url": "https://homeessentials.com",
+        "amount": 150.00,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Smart LED Bulb",
+                "id": "ITM006",
+                "price": 25.00,
+                "quantity": 2
+            },
+            {
+                "name": "Robot Vacuum",
+                "id": "ITM007",
+                "price": 100.00,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10005",
+        "reason": "Incorrect size",
+        "store_name": "Sports Gear",
+        "store_logo": "https://example.com/logos/sports-gear.png",
+        "store_url": "https://sportsgear.com",
+        "amount": 45.99,
+        "active": false,
+        "decision": null,
+        "items": [
+            {
+                "name": "Running Shoes",
+                "id": "ITM008",
+                "price": 45.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10006",
+        "reason": "Damaged on arrival",
+        "store_name": "Kitchen World",
+        "store_logo": "https://example.com/logos/kitchen-world.png",
+        "store_url": "https://kitchenworld.com",
+        "amount": 79.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Non-stick Pan Set",
+                "id": "ITM009",
+                "price": 79.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10007",
+        "reason": "Different color received",
+        "store_name": "Auto Parts",
+        "store_logo": "https://example.com/logos/auto-parts.png",
+        "store_url": "https://autoparts.com",
+        "amount": 120.00,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Car Seat Covers",
+                "id": "ITM010",
+                "price": 60.00,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "RFD10008",
+        "reason": "Battery not working",
+        "store_name": "ElectroShop",
+        "store_logo": "https://example.com/logos/electroshop.png",
+        "store_url": "https://electroshop.com",
+        "amount": 349.99,
+        "active": false,
+        "decision": null,
+        "items": [
+            {
+                "name": "Smartphone",
+                "id": "ITM011",
+                "price": 349.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10009",
+        "reason": "Package missing items",
+        "store_name": "Toy World",
+        "store_logo": "https://example.com/logos/toy-world.png",
+        "store_url": "https://toyworld.com",
+        "amount": 65.50,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Lego Set",
+                "id": "ITM012",
+                "price": 65.50,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10010",
+        "reason": "Subscription cancellation",
+        "store_name": "Streaming Hub",
+        "store_logo": "https://example.com/logos/streaming-hub.png",
+        "store_url": "https://streaminghub.com",
+        "amount": 12.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Premium Membership",
+                "id": "ITM013",
+                "price": 12.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10011",
+        "reason": "Different color received",
+        "store_name": "Auto Parts",
+        "store_logo": "https://example.com/logos/auto-parts.png",
+        "store_url": "https://autoparts.com",
+        "amount": 120.00,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Car Seat Covers",
+                "id": "ITM010",
+                "price": 60.00,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "RFD10012",
+        "reason": "Battery not working",
+        "store_name": "ElectroShop",
+        "store_logo": "https://example.com/logos/electroshop.png",
+        "store_url": "https://electroshop.com",
+        "amount": 349.99,
+        "active": false,
+        "decision": null,
+        "items": [
+            {
+                "name": "Smartphone",
+                "id": "ITM011",
+                "price": 349.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10013",
+        "reason": "Package missing items",
+        "store_name": "Toy World",
+        "store_logo": "https://example.com/logos/toy-world.png",
+        "store_url": "https://toyworld.com",
+        "amount": 65.50,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Lego Set",
+                "id": "ITM012",
+                "price": 65.50,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10014",
+        "reason": "Subscription cancellation",
+        "store_name": "Streaming Hub",
+        "store_logo": "https://example.com/logos/streaming-hub.png",
+        "store_url": "https://streaminghub.com",
+        "amount": 12.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Premium Membership",
+                "id": "ITM013",
+                "price": 12.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10015",
+        "reason": "Damaged on arrival",
+        "store_name": "Kitchen World",
+        "store_logo": "https://example.com/logos/kitchen-world.png",
+        "store_url": "https://kitchenworld.com",
+        "amount": 79.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Non-stick Pan Set",
+                "id": "ITM014",
+                "price": 79.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10016",
+        "reason": "Different color received",
+        "store_name": "Auto Parts",
+        "store_logo": "https://example.com/logos/auto-parts.png",
+        "store_url": "https://autoparts.com",
+        "amount": 120.00,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Car Seat Covers",
+                "id": "ITM015",
+                "price": 60.00,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "RFD10017",
+        "reason": "Battery not working",
+        "store_name": "ElectroShop",
+        "store_logo": "https://example.com/logos/electroshop.png",
+        "store_url": "https://electroshop.com",
+        "amount": 349.99,
+        "active": false,
+        "decision": null,
+        "items": [
+            {
+                "name": "Smartphone",
+                "id": "ITM016",
+                "price": 349.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10018",
+        "reason": "Package missing items",
+        "store_name": "Toy World",
+        "store_logo": "https://example.com/logos/toy-world.png",
+        "store_url": "https://toyworld.com",
+        "amount": 65.50,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Lego Set",
+                "id": "ITM017",
+                "price": 65.50,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10019",
+        "reason": "Subscription cancellation",
+        "store_name": "Streaming Hub",
+        "store_logo": "https://example.com/logos/streaming-hub.png",
+        "store_url": "https://streaminghub.com",
+        "amount": 12.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Premium Membership",
+                "id": "ITM018",
+                "price": 12.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10020",
+        "reason": "Damaged on arrival",
+        "store_name": "Kitchen World",
+        "store_logo": "https://example.com/logos/kitchen-world.png",
+        "store_url": "https://kitchenworld.com",
+        "amount": 79.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Non-stick Pan Set",
+                "id": "ITM019",
+                "price": 79.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10021",
+        "reason": "Different color received",
+        "store_name": "Auto Parts",
+        "store_logo": "https://example.com/logos/auto-parts.png",
+        "store_url": "https://autoparts.com",
+        "amount": 120.00,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Car Seat Covers",
+                "id": "ITM010",
+                "price": 60.00,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "RFD10022",
+        "reason": "Battery not working",
+        "store_name": "ElectroShop",
+        "store_logo": "https://example.com/logos/electroshop.png",
+        "store_url": "https://electroshop.com",
+        "amount": 349.99,
+        "active": false,
+        "decision": null,
+        "items": [
+            {
+                "name": "Smartphone",
+                "id": "ITM011",
+                "price": 349.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10023",
+        "reason": "Package missing items",
+        "store_name": "Toy World",
+        "store_logo": "https://example.com/logos/toy-world.png",
+        "store_url": "https://toyworld.com",
+        "amount": 65.50,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Lego Set",
+                "id": "ITM012",
+                "price": 65.50,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10024",
+        "reason": "Subscription cancellation",
+        "store_name": "Streaming Hub",
+        "store_logo": "https://example.com/logos/streaming-hub.png",
+        "store_url": "https://streaminghub.com",
+        "amount": 12.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Premium Membership",
+                "id": "ITM013",
+                "price": 12.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10025",
+        "reason": "Damaged on arrival",
+        "store_name": "Kitchen World",
+        "store_logo": "https://example.com/logos/kitchen-world.png",
+        "store_url": "https://kitchenworld.com",
+        "amount": 79.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Non-stick Pan Set",
+                "id": "ITM014",
+                "price": 79.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10026",
+        "reason": "Different color received",
+        "store_name": "Auto Parts",
+        "store_logo": "https://example.com/logos/auto-parts.png",
+        "store_url": "https://autoparts.com",
+        "amount": 120.00,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Car Seat Covers",
+                "id": "ITM015",
+                "price": 60.00,
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "RFD10027",
+        "reason": "Battery not working",
+        "store_name": "ElectroShop",
+        "store_logo": "https://example.com/logos/electroshop.png",
+        "store_url": "https://electroshop.com",
+        "amount": 349.99,
+        "active": false,
+        "decision": null,
+        "items": [
+            {
+                "name": "Smartphone",
+                "id": "ITM016",
+                "price": 349.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10028",
+        "reason": "Package missing items",
+        "store_name": "Toy World",
+        "store_logo": "https://example.com/logos/toy-world.png",
+        "store_url": "https://toyworld.com",
+        "amount": 65.50,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Lego Set",
+                "id": "ITM017",
+                "price": 65.50,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10029",
+        "reason": "Subscription cancellation",
+        "store_name": "Streaming Hub",
+        "store_logo": "https://example.com/logos/streaming-hub.png",
+        "store_url": "https://streaminghub.com",
+        "amount": 12.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Premium Membership",
+                "id": "ITM018",
+                "price": 12.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10030",
+        "reason": "Damaged on arrival",
+        "store_name": "Kitchen World",
+        "store_logo": "https://example.com/logos/kitchen-world.png",
+        "store_url": "https://kitchenworld.com",
+        "amount": 79.99,
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Non-stick Pan Set",
+                "id": "ITM019",
+                "price": 79.99,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": "RFD10031",
+        "reason": "Different color received",
+        "store_name": "Auto Parts",
+        "store_logo": "https://example.com/logos/auto-parts.png",
+        "store_url": "https://autoparts.com",
+        "amount": 120.00,        
+        "active": true,
+        "decision": null,
+        "items": [
+            {
+                "name": "Car Seat Covers",
+                "id": "ITM020",
+                "price": 60.00,
+                "quantity": 2
             }
         ]
     }

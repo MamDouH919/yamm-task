@@ -1,21 +1,8 @@
-import { styled } from '@mui/material/styles';
-import { Container, Grid2 as Grid, Paper, Stack, Typography } from '@mui/material';
+import { Grid2 as Grid, Paper, Stack, Typography } from '@mui/material';
 
 import { useEffect, useState } from 'react';
 import { RiRefund2Fill } from 'react-icons/ri';
 
-const PREFIX = "Details";
-
-const classes = {
-    link: `${PREFIX}-link`,
-};
-
-const Root = styled(Container)(() => ({
-    [`& .${classes.link}`]: {
-        textDecoration: "none",
-        cursor: "pointer",
-    },
-}));
 
 const Details = () => {
     const [orders, setOrders] = useState([]);
@@ -30,9 +17,9 @@ const Details = () => {
     console.log(orders);
 
     return (
-        <Root maxWidth={"xl"}>
-            <Grid container spacing={2} width={"100%"} m={0}>
-                <Grid size={{ xs: 12 }} className={classes.link}>
+        <Stack>
+            <Grid container width={"100%"} m={0}>
+                <Grid size={{ xs: 12 }}>
                     <Paper sx={{ p: 4, width: "100%" }}>
                         <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
                             <Stack spacing={2}>
@@ -53,7 +40,7 @@ const Details = () => {
                     </Paper>
                 </Grid>
             </Grid>
-        </Root>
+        </Stack>
     )
 }
 
