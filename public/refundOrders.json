@@ -32,14 +32,7 @@
         "amount": 99.99,
         "active": true,
         "decision": null,
-        "items": [
-            {
-                "name": "Bluetooth Speaker",
-                "id": "ITM003",
-                "price": 99.99,
-                "quantity": 1
-            }
-        ]
+        "items": []
     },
     {
         "id": "RFD10003",
@@ -116,14 +109,7 @@
         "amount": 79.99,
         "active": true,
         "decision": null,
-        "items": [
-            {
-                "name": "Non-stick Pan Set",
-                "id": "ITM009",
-                "price": 79.99,
-                "quantity": 1
-            }
-        ]
+        "items": []
     },
     {
         "id": "RFD10007",

@@ -16,7 +16,6 @@ const ListPaper = ({
     data,
     minHeight
 }) => {
-    console.log(!loading && !data);
     
     return (
         <PaperStyle fixedminheight={minHeight} nodata={!loading && !data}>

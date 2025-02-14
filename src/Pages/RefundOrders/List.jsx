@@ -1,12 +1,5 @@
-
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { styled } from "@mui/material/styles";
-import TableBodyWithLoad from '../../Layouts/Tables/TableBodyWithLoad';
 import { FixedTableCell } from '../../Layouts/Tables/FixedTableCell';
 import MUITablePagination from '../../Layouts/Tables/TablePagination';
 import ListPaper from '../../Layouts/Tables/ListPaper';
@@ -17,6 +10,7 @@ import DecisionAction from './component/DecisionAction';
 import { Launch, Visibility } from '@mui/icons-material';
 import { useNavigate } from 'react-router';
 import CellColor from '../../Components/Custom/CellColor';
+import TableData from '../../Layouts/Tables/TableData';
 
 const ListPageStyle = styled("div")(() => ({
     height: "100%",
@@ -56,7 +50,7 @@ export default function RefundOrdersList() {
     };
 
     const handleViewDetails = (id) => {
-        navigate(`/admin/customers/${id}`);
+        navigate(`/refund-orders/${id}`);
     };
 
     const handleChangeDecision = (id, code) => {
@@ -77,74 +71,67 @@ export default function RefundOrdersList() {
         "store url",
         "reason",
         "amount",
+        "items",
         "actions"
     ]
 
     return (
         <ListPageStyle>
             <ListPaper loading={loading} data={!!(data && data.length > 0)}>
-                <TableContainer sx={{ width: "100%", overflow: "auto" }}>
-                    <Table stickyHeader aria-label="sticky table">
-                        <TableHead>
-                            <TableRow>
-                                {tableCellHeader.map(e =>
-                                    <TableCell align={'left'} key={e}>
-                                        {e}
-                                    </TableCell>
-                                )}
-                            </TableRow>
-                        </TableHead>
-                        <TableBodyWithLoad loading={loading} tableCellHeaderLength={tableCellHeader.length}>
-                            <TableBody>
-                                {data.map((row) => {
-                                    return (
-                                        <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-                                            <FixedTableCell>
-                                                {row.id}
-                                            </FixedTableCell>
-                                            <CellColor cell={{ label: row.decision, code: row.decision }} />
-                                            <FixedTableCell>
-                                                {row.store_name}
-                                            </FixedTableCell>
-                                            <FixedTableCell>
-                                                <Avatar>
-                                                    <img src={row.store_logo} alt={row.store_name} />
-                                                </Avatar>
-                                            </FixedTableCell>
-                                            <FixedTableCell>
-                                                <a href={row.store_url} target="_blank" rel="noreferrer">
-                                                    <Launch color='primary' />
-                                                </a>
-                                            </FixedTableCell>
-                                            <FixedTableCell>
-                                                {row.reason}
-                                            </FixedTableCell>
-                                            <FixedTableCell>
-                                                {row.amount}
-                                            </FixedTableCell>
-                                            <FixedTableCell>
-                                                <Stack direction={"row"} alignItems={"center"} spacing={1}>
-                                                    <IconButton
-                                                        aria-label="visibility"
-                                                        onClick={() => handleViewDetails(row.id)}
-                                                    >
-                                                        <Visibility color='primary' />
-                                                    </IconButton>
-                                                    <Switch
-                                                        checked={row.active}
-                                                        onChange={(event) => handleChange(event, row.id)}
-                                                        inputProps={{ 'aria-label': 'controlled' }}
-                                                    />
-                                                    <DecisionAction id={row.id} handleChangeDecision={handleChangeDecision} />
-                                                </Stack>
-                                            </FixedTableCell>
-                                        </TableRow>
-                                    );
-                                })}
-                            </TableBody>
-                        </TableBodyWithLoad>
-                    </Table>
-                </TableContainer>
+                <TableData
+                    tableCellHeader={tableCellHeader}
+                    loading={loading}
+                    tableBody={
+                        data.map((row) => {
+                            return (
+                                <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                                    <FixedTableCell>
+                                        {row.id}
+                                    </FixedTableCell>
+                                    <CellColor cell={{ label: row.decision, code: row.decision }} />
+                                    <FixedTableCell>
+                                        {row.store_name}
+                                    </FixedTableCell>
+                                    <FixedTableCell>
+                                        <Avatar>
+                                            <img src={row.store_logo} alt={row.store_name} />
+                                        </Avatar>
+                                    </FixedTableCell>
+                                    <FixedTableCell>
+                                        <a href={row.store_url} target="_blank" rel="noreferrer">
+                                            <Launch color='primary' />
+                                        </a>
+                                    </FixedTableCell>
+                                    <FixedTableCell>
+                                        {row.reason}
+                                    </FixedTableCell>
+                                    <FixedTableCell>
+                                        {row.amount}
+                                    </FixedTableCell>
+                                    <FixedTableCell>
+                                        {row.items.length}
+                                    </FixedTableCell>
+                                    <FixedTableCell>
+                                        <Stack direction={"row"} alignItems={"center"} spacing={1}>
+                                            <IconButton
+                                                aria-label="visibility"
+                                                onClick={() => handleViewDetails(row.id)}
+                                            >
+                                                <Visibility color='primary' />
+                                            </IconButton>
+                                            <Switch
+                                                checked={row.active}
+                                                onChange={(event) => handleChange(event, row.id)}
+                                                inputProps={{ 'aria-label': 'controlled' }}
+                                            />
+                                            <DecisionAction id={row.id} handleChangeDecision={handleChangeDecision} />
+                                        </Stack>
+                                    </FixedTableCell>
+                                </TableRow>
+                            );
+                        })
+                    }
+                />
                 <MUITablePagination
                     count={data?.length}
                     page={0}

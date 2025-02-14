@@ -5,6 +5,7 @@ import ThemeProviderMUI from "../Components/MuiThem";
 import Home from "../Pages/Home";
 import NotFound from "../Components/NotFound";
 import RefundOrdersList from "../Pages/RefundOrders/List";
+import RefundOrdersView from "../Pages/RefundOrders/view";
 
 export const router = createBrowserRouter([
     {
@@ -20,9 +21,12 @@ export const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: '/refund-orders',
-                element: <RefundOrdersList />,
-            },
+                path: 'refund-orders',
+                children: [
+                  { index: true, element: <RefundOrdersList /> },
+                  { path: ':id', element: <RefundOrdersView /> },
+                ],
+              },
             {
                 path: '*',
                 element: <NotFound />,
