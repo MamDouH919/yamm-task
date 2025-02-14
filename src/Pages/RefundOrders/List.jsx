@@ -5,12 +5,13 @@ import MUITablePagination from '../../Layouts/Tables/TablePagination';
 import ListPaper from '../../Layouts/Tables/ListPaper';
 import { toast } from 'sonner';
 import { useEffect, useState } from 'react';
-import { Avatar, IconButton, Stack, Switch } from '@mui/material';
+import { Avatar, FormControlLabel, IconButton, Stack, Switch, Tooltip, Typography } from '@mui/material';
 import DecisionAction from './component/DecisionAction';
 import { Launch, Visibility } from '@mui/icons-material';
 import { useNavigate } from 'react-router';
 import CellColor from '../../Components/Custom/CellColor';
 import TableData from '../../Layouts/Tables/TableData';
+import BooleanCell from '../../Components/Custom/BooleanCell';
 
 const ListPageStyle = styled("div")(() => ({
     height: "100%",
@@ -20,24 +21,27 @@ export default function RefundOrdersList() {
     const navigate = useNavigate();
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [perPage, setPerPage] = useState(15);
+    const [page, setPage] = useState(0);
+    const rowsPerPage = 15;
 
-    const handleChangeRowsPerPage = (event) => {
-        setPerPage(+event.target.value);
+    const handleChangePage = (event, page) => {
+        setPage(page);
     };
 
+
     useEffect(() => {
+        setLoading(true);
         fetch('/refundOrders.json')
             .then(response => response.json())
-            .then(data => {
+            .then(fullData => {
+                setData(fullData);
                 setLoading(false);
-                setData(data.slice(0, perPage)); // Get only the first 15 records
             })
             .catch(() => {
                 toast.error('Error fetching refund orders');
                 setLoading(false);
             });
-    }, [perPage]);
+    }, []);
 
     const handleChange = (event, id) => {
         setData(prev => {
@@ -65,13 +69,14 @@ export default function RefundOrdersList() {
 
     const tableCellHeader = [
         "id",
-        "decision",
+        "reason",
         "store name",
         "store logo",
         "store url",
-        "reason",
         "amount",
-        "items",
+        "active",
+        "decision",
+        "items count",
         "actions"
     ]
 
@@ -82,13 +87,18 @@ export default function RefundOrdersList() {
                     tableCellHeader={tableCellHeader}
                     loading={loading}
                     tableBody={
-                        data.map((row) => {
+                        data.slice(
+                            page * rowsPerPage,
+                            page * rowsPerPage + rowsPerPage
+                          ).map((row) => {
                             return (
                                 <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
                                     <FixedTableCell>
                                         {row.id}
                                     </FixedTableCell>
-                                    <CellColor cell={{ label: row.decision, code: row.decision }} />
+                                    <FixedTableCell>
+                                        {row.reason}
+                                    </FixedTableCell>
                                     <FixedTableCell>
                                         {row.store_name}
                                     </FixedTableCell>
@@ -108,29 +118,46 @@ export default function RefundOrdersList() {
                                             <Launch color='primary' />
                                         </a>
                                     </FixedTableCell>
-                                    <FixedTableCell>
-                                        {row.reason}
-                                    </FixedTableCell>
+
                                     <FixedTableCell>
                                         {row.amount}
                                     </FixedTableCell>
+                                    <FixedTableCell>
+                                        <BooleanCell value={row.active} />
+                                    </FixedTableCell>
+                                    <CellColor cell={{ label: row.decision, code: row.decision }} />
                                     <FixedTableCell>
                                         {row.items.length}
                                     </FixedTableCell>
                                     <FixedTableCell>
                                         <Stack direction={"row"} alignItems={"center"} spacing={1}>
-                                            <IconButton
-                                                aria-label="visibility"
-                                                onClick={() => handleViewDetails(row.id)}
-                                            >
-                                                <Visibility color='primary' />
-                                            </IconButton>
-                                            <Switch
-                                                checked={row.active}
-                                                onChange={(event) => handleChange(event, row.id)}
-                                                inputProps={{ 'aria-label': 'controlled' }}
-                                            />
                                             <DecisionAction id={row.id} handleChangeDecision={handleChangeDecision} />
+                                            <Stack minWidth={"83px"}>
+                                                <FormControlLabel
+                                                    sx={{ m: 0 }}
+                                                    control={<Switch
+                                                        checked={row.active}
+                                                        onChange={(event) => handleChange(event, row.id)}
+                                                        inputProps={{ 'aria-label': 'controlled' }}
+                                                        size='small'
+                                                    />}
+                                                    labelPlacement="start"
+                                                    label={
+                                                        <Typography variant="body2" color="text.secondary">
+                                                            {row.active ? "active" : "inactive"}
+                                                        </Typography>
+                                                    }
+                                                />
+                                            </Stack>
+                                            <Tooltip title="order details">
+                                                <IconButton
+                                                    aria-label="visibility"
+                                                    onClick={() => handleViewDetails(row.id)}
+                                                >
+                                                    <Visibility color='primary' />
+                                                </IconButton>
+                                            </Tooltip>
+
                                         </Stack>
                                     </FixedTableCell>
                                 </TableRow>
@@ -139,11 +166,9 @@ export default function RefundOrdersList() {
                     }
                 />
                 <MUITablePagination
-                    count={data?.length}
-                    page={0}
-                    rowsPerPage={perPage}
-                    rowsPerPageOptions={[15, 30, 50]}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
+                    count={data?.length ?? 0}
+                    page={page}
+                    onPageChange={handleChangePage}
                 />
             </ListPaper>
         </ListPageStyle>

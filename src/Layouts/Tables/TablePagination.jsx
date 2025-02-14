@@ -5,9 +5,8 @@ import { styled } from "@mui/material/styles";
 const MUITablePagination = (props) => {
     const {
         count,
-        rowsPerPage,
-        onRowsPerPageChange,
-        rowsPerPageOptions,
+        page,
+        onPageChange,
     } = props;
 
     const PREFIX = "ListPickups";
@@ -42,14 +41,14 @@ const MUITablePagination = (props) => {
                     },
                 }}
                 labelRowsPerPage={""}
-                rowsPerPageOptions={rowsPerPageOptions ?? [20, 50, 100]}
+                rowsPerPageOptions={[]}
                 component="div"
-                count={count ? count : 15}
-                rowsPerPage={rowsPerPage}
-                page={0}
-                onPageChange={() => { }}
-                onRowsPerPageChange={onRowsPerPageChange}
-                ActionsComponent={() => null}
+                count={count ? count : 20}
+                rowsPerPage={15}
+                page={!count || count <= 0 ? 0 : page}
+                onPageChange={onPageChange}
+                onRowsPerPageChange={() => { }}
+                ActionsComponent={undefined}
             />
         </Root>
     );
@@ -57,11 +56,8 @@ const MUITablePagination = (props) => {
 
 MUITablePagination.propTypes = {
     count: PropTypes.number,
-    rowsPerPage: PropTypes.number,
     page: PropTypes.number,
     onPageChange: PropTypes.func,
-    onRowsPerPageChange: PropTypes.func,
-    rowsPerPageOptions: PropTypes.array,
 };
 
 export default MUITablePagination;
