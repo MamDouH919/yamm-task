@@ -1,5 +1,5 @@
 import { Avatar, Grid2 as Grid, Icon, Paper, Stack, TableRow } from '@mui/material'
-import React, { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 import { toast } from 'sonner';
 import LoadingPage from '../../Components/LoadingPage';
@@ -12,15 +12,14 @@ import { Launch } from '@mui/icons-material';
 
 const RefundOrdersView = () => {
     const { id } = useParams(); // Get ID from URL
-    const [data, setData] = React.useState();
-    const [loading, setLoading] = React.useState(true);
+    const [data, setData] = useState();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch("/refundOrders.json")
             .then((response) => response.json())
             .then((data) => {
                 setLoading(false);
-
                 const refundOrder = data.find((order) => order.id === id);
 
                 if (refundOrder) {

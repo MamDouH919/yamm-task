@@ -21,7 +21,7 @@ const StyledTableCell = styled(TableCell)(() => ({
 
 export const FixedTableCell = memo(function FixedTableCell(props) {
     const { allowPlaceholder = true, dir, ...restProps } = props;
-    // const { t } = useTranslation();
+
     return (
         <StyledTableCell {...restProps}>
             <div className={classes.cellWidth} dir={dir}>

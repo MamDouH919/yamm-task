@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import PropTypes from "prop-types";
 import { DashboardContext } from "./DashboardContext"; // Import the context
+import useWidth, { isWidthDown } from "../Components/Helpers/useWidth";
 
 // Reducer function
 const reducer = (state, action) => {
@@ -22,6 +23,13 @@ const getInitialState = {
 
 // Provider component
 export const DashboardProvider = ({ children }) => {
+    const screenWidth = useWidth();
+    const isScreenSmall = isWidthDown("xs", screenWidth);
+
+    if (isScreenSmall) {
+        getInitialState.open = false;
+    }
+
     const [state, dispatch] = useReducer(reducer, getInitialState);
 
     return (

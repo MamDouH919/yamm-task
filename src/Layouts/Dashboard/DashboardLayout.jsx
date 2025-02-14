@@ -6,7 +6,7 @@ import { Stack } from '@mui/material';
 import { DashboardProvider } from '../../Context/Dashboard';
 import PropTypes from 'prop-types';
 
-export const drawerWidth = 200;
+export const drawerWidth = 150;
 
 const DashboardLayout = ({ children }) => {
     return (

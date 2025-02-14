@@ -103,7 +103,7 @@ const NavDrawer = () => {
     const screenWidth = useWidth();
     const isScreenSmall = isWidthDown("xs", screenWidth);
     const { pathname } = useLocation();
-    
+
     return (
         <Root
             variant={isScreenSmall ? "temporary" : "persistent"}
@@ -118,6 +118,11 @@ const NavDrawer = () => {
                         <Link
                             key={index}
                             to={link.pathname}
+                            onClick={() => {
+                                if (isScreenSmall) {
+                                    context?.dispatch({ type: "SET_OPEN", payload: false })
+                                }
+                            }}
                             className={clsx(classes.navLink, {
                                 [classes.listItemFocus]: pathname === "/" ? link.id === "dash" : pathname.includes(link.id)
                             })}

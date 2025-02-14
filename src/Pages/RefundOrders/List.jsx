@@ -94,7 +94,13 @@ export default function RefundOrdersList() {
                                     </FixedTableCell>
                                     <FixedTableCell>
                                         <Avatar>
-                                            <img src={row.store_logo} alt={row.store_name} />
+                                            <img
+                                                src={row.store_logo}
+                                                alt={row.store_name}
+                                                height={"100%"}
+                                                width={"100%"}
+                                                style={{ objectFit: "contain" }}
+                                            />
                                         </Avatar>
                                     </FixedTableCell>
                                     <FixedTableCell>

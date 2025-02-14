@@ -16,7 +16,7 @@ const MUITablePagination = (props) => {
         background: `${PREFIX}-background`,
     };
 
-    const Root = styled("div")(({theme}) => ({
+    const Root = styled("div")(({ theme }) => ({
         [`& .${classes.background}`]: {
             "& .MuiTablePagination-toolbar": {
                 padding: theme.spacing(0, 2),
@@ -30,8 +30,6 @@ const MUITablePagination = (props) => {
         },
     }));
 
-    // const Languages = config.app.languages;
-    // const lang = localStorage.getItem("i18nextLng") ? localStorage.getItem("i18nextLng") : Languages[0];
     return (
         <Root>
             <TablePagination
@@ -43,25 +41,15 @@ const MUITablePagination = (props) => {
                         margin: 0,
                     },
                 }}
-                // labelRowsPerPage={""}
-                // rowsPerPageOptions={rowsPerPageOptions ?? [20, 50, 100]}
-                // component="div"
-                // count={count ? count : 15}
-                // rowsPerPage={rowsPerPage}
-                // page={!count || count <= 0 ? 0 : page}
-
-                // onRowsPerPageChange={onRowsPerPageChange}
-                // ActionsComponent={undefined}
-
                 labelRowsPerPage={""}
                 rowsPerPageOptions={rowsPerPageOptions ?? [20, 50, 100]}
                 component="div"
                 count={count ? count : 15}
                 rowsPerPage={rowsPerPage}
-                page={0} // Always show the first page
-                onPageChange={() => { }} // Prevent page changes
+                page={0}
+                onPageChange={() => { }}
                 onRowsPerPageChange={onRowsPerPageChange}
-                ActionsComponent={() => null} // Hides the pagination buttons
+                ActionsComponent={() => null}
             />
         </Root>
     );

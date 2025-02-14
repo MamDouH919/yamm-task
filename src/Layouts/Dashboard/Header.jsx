@@ -16,7 +16,10 @@ const AppBar = styled(MuiAppBar, {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
     }),
+}));
 
+const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
+    padding: `${theme.spacing(0, 0.5)} !important`,
 }));
 
 
@@ -24,7 +27,7 @@ const Header = () => {
     const context = useContext(DashboardContext);
     return (
         <AppBar position='fixed' open={context?.state.open} >
-            <Toolbar>
+            <ToolbarStyle>
                 <Stack direction={"row"} spacing={1} alignItems={"center"}>
                     <IconButton
                         color="primary"
@@ -39,7 +42,7 @@ const Header = () => {
                     </Typography>
 
                 </Stack>
-            </Toolbar>
+            </ToolbarStyle>
         </AppBar>
     )
 }

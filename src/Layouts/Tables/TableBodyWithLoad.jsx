@@ -9,7 +9,6 @@ const TableBodyWithLoad = (props) => {
   const FixedTableCellArray = Array.from({ length: tableCellHeaderLength }, (_, index) => index + 1);
 
   if (!loading) {
-    // Ensure children is wrapped in a valid JSX element
     return <>{children}</>;
   }
 

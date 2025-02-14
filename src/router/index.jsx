@@ -34,12 +34,4 @@ export const router = createBrowserRouter([
         ],
     },
 
-], {
-    future: {
-        v7_partialHydration: true, // Enable the fetcher persist behavior
-        v7_relativeSplatPath: true, // Enable the fetcher persist behavior
-        v7_skipActionErrorRevalidation: true, // Enable the fetcher persist behavior
-        v7_normalizeFormMethod: true, // Enable the fetcher persist behavior
-        v7_fetcherPersist: true, // Enable the fetcher persist behavior
-    },
-});
+]);

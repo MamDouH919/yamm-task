@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Link } from "react-router";
 
 const Root = styled("div")(({ theme }) => ({
-    // background: theme.palette.background.default,
     "a": {
         textDecoration: "none",
         color: theme.palette.primary.main,
